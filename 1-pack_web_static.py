@@ -1,19 +1,18 @@
 #!/usr/bin/python3
-"""
-    Compress before sending
-"""
+""" 1 - pack_web_static.py """
 from fabric.api import local
-import time
+from datetime import datetime
 
 
 def do_pack():
-    """
-    Enpack all the static content of AirBnB clone
-    """
-    date = time.strftime("%Y%m%d%H%M%S")
-    try:
-        local('mkdir -p versions')
-        local('tar -czvf versions/web_static_{}.tgz web_static'.format(date))
-        return 'versions/web_static_{}.tgz'.format(date)
-    except Exception:
-        return None
+    """do_pack"""
+    now = datetime.now()
+    now = now.strftime('%Y%m%d%H%M%S')
+    archive_path = 'versions/web_static_' + now + '.tgz'
+
+    local('mkdir -p versions/')
+    result = local('tar -cvzf {} web_static/'.format(archive_path))
+
+    if result.succeeded:
+        return archive_path
+    return None
