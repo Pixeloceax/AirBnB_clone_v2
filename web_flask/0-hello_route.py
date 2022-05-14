@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-from flask import Flask
 """
     Hello
 """
+from flask import Flask
+
 
 app = Flask(__name__)
 
@@ -10,7 +11,7 @@ app = Flask(__name__)
 @app.route('/', strict_slashes=False)
 def Hello_HBNB():
     """
-    Hello_HBNB function
+        Hello_HBNB function
     """
     return 'Hello HBNB!'
 

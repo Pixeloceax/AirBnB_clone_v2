@@ -1,8 +1,9 @@
 #!/usr/bin/python3
+"""
+    hbnb
+"""
 from flask import Flask
-"""
-    Hello
-"""
+
 
 app = Flask(__name__)
 
@@ -10,7 +11,7 @@ app = Flask(__name__)
 @app.route('/', strict_slashes=False)
 def Hello_HBNB():
     """
-    Hello_HBNB function
+        Hello_HBNB function
     """
     return 'Hello HBNB!'
 
@@ -18,7 +19,7 @@ def Hello_HBNB():
 @app.route('/hbnb', strict_slashes=False)
 def HBNB():
     """
-    HBNB function
+        HBNB function
     """
     return 'HBNB'
 
