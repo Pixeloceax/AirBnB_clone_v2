@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    Hello
+    Hello route
 """
 from flask import Flask
 
